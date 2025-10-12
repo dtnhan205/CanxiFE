@@ -1,4 +1,14 @@
+*{
+  margin: 0%;
+  padding: 0%;
+}
+html {
+    overflow-y: scroll; /* Luôn hiển thị scrollbar để tránh layout shift */
+}
 
+body {
+    overflow-y: overlay; /* Scrollbar overlay không chiếm không gian */
+}
 /* Responsive */
 @media (max-width: 1024px) {
     .header-content {
@@ -630,4 +640,495 @@
     width: 300px;
     height: 180px;
   }
+}
+/* Responsive Design */
+
+/* Tablet Devices (768px - 1024px) */
+@media (max-width: 1024px) {
+    .header-content {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav.active ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 10%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1.5rem;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+        from { transform: translateY(-10px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .promotion {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .promotion-image {
+        margin-top: 1.5rem;
+    }
+
+    .product-list {
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    }
+
+    /* Unique Section */
+    .unique-box {
+        width: 85%;
+        gap: 1.5rem;
+    }
+
+    /* Certificate Section */
+    .certificate-box {
+        gap: 20px;
+    }
+
+    .cert-item {
+        max-width: 250px;
+    }
+
+    .item-big {
+        max-width: 500px;
+    }
+
+    /* Feedback Section */
+    .feedback-container {
+        gap: 20px;
+    }
+
+    .feedback-item {
+        max-width: 400px;
+    }
+}
+
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+    .top-bar-content {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    .unical-info h2{
+      display: none;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .search-input {
+        width: 12rem;
+    }
+
+    .search-input:focus {
+        width: 14rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* Calcium Deficiency */
+    .deficiency-list, .usage-list {
+        grid-template-columns: 1fr;
+    }
+
+    .deficiency-image {
+        height: 6rem;
+    }
+
+    /* Bandean Section */
+    .bandean818 {
+        width: 90%;
+        margin: 1.5rem auto;
+    }
+
+    .bandean818 h2 {
+        font-size: 1.5rem;
+    }
+
+    .bandean818 p {
+        width: 90%;
+        margin: 2rem auto 1rem;
+        font-size: 1rem;
+    }
+
+    .box {
+        flex-direction: column;
+        gap: 2rem;
+        width: 95%;
+    }
+
+    .box1 {
+        margin-top: 1rem;
+    }
+
+    .box3, .box4 {
+        max-width: 100%;
+    }
+
+    .box3 p, .box4 p {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    /* Opinion Section */
+    .opinion h2 {
+        font-size: 1.5rem;
+    }
+
+    .opinion-box {
+        margin-top: 2rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .opinion-box > div {
+        max-width: 100%;
+    }
+
+    .opinion-box p {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    /* Unique Section */
+    .unique {
+        padding: 1.5rem;
+    }
+
+    .unique h2 {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .unique-box {
+        flex-direction: column;
+        width: 90%;
+        margin: 1.5rem auto;
+        gap: 1.5rem;
+    }
+
+    .unique-text, .unique-img {
+        min-width: 100%;
+    }
+
+    .unique-img img {
+        border-radius: 2rem;
+    }
+
+    /* Certificate Section */
+    .certificate {
+        padding: 2rem 1rem;
+    }
+
+    .certificate h2 {
+        font-size: 1.5rem;
+    }
+
+    .certificate-box {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .cert-item {
+        max-width: 100%;
+        margin-top: 1rem;
+    }
+
+    .item-big {
+        max-width: 100%;
+    }
+
+    .cert-item img {
+        height: 300px;
+    }
+
+    /* Feedback Section */
+    .feedback {
+        margin: 2rem 1rem;
+        padding: 2rem 1rem;
+    }
+
+    .feedback h2 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .feedback-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feedback-item {
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+
+    /* Unical Info Section */
+    .unical-info {
+        padding: 2rem 0;
+    }
+
+    .unical-container {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .orange-bg {
+        width: 250px;
+        height: 150px;
+    }
+
+    .info-block {
+        text-align: center;
+    }
+
+    .icon {
+        font-size: 1.75rem;
+    }
+
+    .info-block h3 {
+        font-size: 1.1rem;
+    }
+
+    .info-block p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        margin-bottom: 0.75rem;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* Calcium Deficiency */
+    .deficiency-item, .usage-item {
+        padding: 1rem;
+    }
+
+    .deficiency-image {
+        height: 5rem;
+    }
+
+    .usage-number {
+        font-size: 1.2rem;
+    }
+
+    /* Bandean Section */
+    .bandean818 h2 {
+        font-size: 1.3rem;
+    }
+
+    .bandean818 p {
+        font-size: 0.9rem;
+        margin: 1.5rem auto 0.5rem;
+    }
+
+    .box {
+        gap: 1.5rem;
+        margin: 1.5rem auto;
+    }
+
+    .box2 p {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    /* Unique Section */
+    .unique {
+        padding: 1rem;
+    }
+
+    .unique h2 {
+        font-size: 1.3rem;
+    }
+
+    .unique-box {
+        width: 95%;
+        margin: 1rem auto;
+        gap: 1rem;
+    }
+
+    .unique-text h3 {
+        font-size: 1.1rem;
+    }
+
+    .unique-text li {
+        font-size: 0.9rem;
+    }
+
+    .unique-img img {
+        border-radius: 1.5rem;
+    }
+
+    /* Certificate Section */
+    .certificate h2 {
+        font-size: 1.3rem;
+    }
+
+    .certificate p {
+        font-size: 0.9rem;
+    }
+
+    .cert-item img {
+        height: 250px;
+    }
+
+    /* Feedback Section */
+    .feedback h2 {
+        font-size: 1.3rem;
+    }
+
+    .feedback-text {
+        font-size: 0.9rem;
+    }
+
+    /* Unical Info Section */
+    .unical-content {
+        gap: 1.5rem;
+    }
+
+    .info-block {
+        gap: 1rem;
+    }
+
+    .icon {
+        font-size: 1.5rem;
+    }
+
+    .info-block h3 {
+        font-size: 1rem;
+    }
+
+    .info-block p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra Small Devices (360px and below) */
+@media (max-width: 360px) {
+    .unique-box {
+        width: 100%;
+    }
+
+    .unique-img img {
+        border-radius: 1rem;
+    }
+
+    .cert-item img {
+        height: 200px;
+    }
+
+    .feedback-item {
+        padding: 1rem;
+    }
+
+    .box3 iframe,
+    .box4 iframe,
+    .opinion-box iframe {
+        height: 200px;
+    }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .unique-box {
+        flex-direction: row;
+    }
+
+    .certificate-box {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .feedback-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+/* High-resolution displays */
+@media (min-resolution: 192dpi) {
+    .unique-img img,
+    .cert-item img,
+    .feedback-item {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+.feedback-item iframe {
+    width: 100%;
+    height: 223px;
+    max-width: 397px;
+}
+
+@media (max-width: 768px) {
+    .feedback-item iframe {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .feedback-item iframe {
+        height: 180px;
+    }
+}
+
+@media (max-width: 360px) {
+    .feedback-item iframe {
+        height: 160px;
+    }
 }

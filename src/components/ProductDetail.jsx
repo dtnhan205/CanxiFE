@@ -345,14 +345,10 @@ const ProductDetail = () => {
                   <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required />
                 </div>
                 <div className="form-group">
-                  <label>Tỉnh/Thành phố *</label>
-                  <select name="province" value={formData.province} onChange={handleChange} required>
-                    <option value="">Chọn tỉnh/thành</option>
-                    {provinces.map(province => (
-                      <option key={province.code} value={province.code}>{province.name}</option>
-                    ))}
-                  </select>
+                  <label>Số điện thoại *</label>
+                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
                 </div>
+                
                 <div className="form-group">
                   <label>Địa chỉ chi tiết (số nhà, đường, phường/xã) *</label>
                   <input
@@ -367,8 +363,13 @@ const ProductDetail = () => {
               </div>
               <div className="form-column">
                 <div className="form-group">
-                  <label>Số điện thoại *</label>
-                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
+                  <label>Tỉnh/Thành phố *</label>
+                  <select name="province" value={formData.province} onChange={handleChange} required>
+                    <option value="">Chọn tỉnh/thành</option>
+                    {provinces.map(province => (
+                      <option key={province.code} value={province.code}>{province.name}</option>
+                    ))}
+                  </select>
                 </div>
                 <div className="form-group">
                   <label>Quận/Huyện *</label>
