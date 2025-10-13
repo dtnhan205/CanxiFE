@@ -8,7 +8,7 @@ const ProductTabs = ({ product }) => {
   useEffect(() => {
     const fetchTotalSold = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/products', {
+        const response = await fetch('http://160.187.246.95:3000/api/products', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -20,19 +20,15 @@ const ProductTabs = ({ product }) => {
         }
 
         const data = await response.json();
-        console.log('Dữ liệu từ API:', data); // Log dữ liệu để debug
 
         // Lấy danh sách sản phẩm từ trường 'products' trong data
         const products = Array.isArray(data.products) ? data.products : [];
-        console.log('Danh sách sản phẩm:', products); // Log danh sách sản phẩm
 
         // Tính tổng số lượng đã bán
         const total = products.reduce((sum, item) => {
-          console.log('Sản phẩm hiện tại:', item, 'sold:', item.sold); // Log từng sản phẩm và sold
           return sum + (item.sold || 0);
         }, 0);
         setTotalSold(total);
-        console.log('Tổng số lượng đã bán:', total); // Log tổng cuối cùng
       } catch (err) {
         console.error('Lỗi khi lấy tổng số lượng đã bán:', err);
         setTotalSold(0); // Đặt về 0 nếu có lỗi

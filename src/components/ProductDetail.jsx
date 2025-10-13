@@ -35,7 +35,6 @@ const ProductDetail = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    console.log('Received id:', id);
 
     if (!id) {
       console.error('ID is undefined. Redirecting to home.');
@@ -47,15 +46,13 @@ const ProductDetail = () => {
 
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/products/${id}`, {
+        const response = await fetch(`http://160.187.246.95:3000/api/products/${id}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
           },
         });
 
-        console.log('Response status:', response.status);
-        console.log('Response body:', await response.clone().text());
 
         const contentType = response.headers.get('content-type');
         if (!response.ok) {
@@ -66,7 +63,6 @@ const ProductDetail = () => {
         }
 
         const data = await response.json();
-        console.log('Fetched data:', data);
         if (!data || typeof data !== 'object') {
           throw new Error('Dữ liệu trả về không hợp lệ');
         }
@@ -95,7 +91,7 @@ const ProductDetail = () => {
 
     const fetchTotalSold = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/products', {
+        const response = await fetch('http://160.187.246.95:3000/api/products', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -107,19 +103,15 @@ const ProductDetail = () => {
         }
 
         const data = await response.json();
-        console.log('Dữ liệu từ API:', data); // Log dữ liệu để debug
 
         // Lấy danh sách sản phẩm từ trường 'products' trong data
         const products = Array.isArray(data.products) ? data.products : [];
-        console.log('Danh sách sản phẩm:', products); // Log danh sách sản phẩm
 
         // Tính tổng số lượng đã bán
         const total = products.reduce((sum, item) => {
-          console.log('Sản phẩm hiện tại:', item, 'sold:', item.sold); // Log từng sản phẩm và sold
           return sum + (item.sold || 0);
         }, 0);
         setTotalSold(total);
-        console.log('Tổng số lượng đã bán:', total); // Log tổng cuối cùng
       } catch (err) {
         console.error('Lỗi khi lấy tổng số lượng đã bán:', err);
         setTotalSold(0); // Đặt về 0 nếu có lỗi
@@ -158,9 +150,7 @@ const ProductDetail = () => {
 
   const handleAddToCart = () => {
     if (product) {
-      console.log(`Đã thêm ${boxCount} ${product.name} vào giỏ hàng!`);
     } else {
-      console.log(`Đã thêm ${boxCount} sản phẩm vào giỏ hàng!`);
     }
   };
 
@@ -204,7 +194,7 @@ const ProductDetail = () => {
         note: formData.note,
       };
 
-      const response = await fetch('http://localhost:3000/api/orders', {
+      const response = await fetch('http://160.187.246.95:3000/api/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

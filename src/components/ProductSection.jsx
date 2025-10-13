@@ -32,15 +32,13 @@ const ProductSection = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/products?limit=3', {
+        const response = await fetch('http://160.187.246.95:3000/api/products?limit=3', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
           },
         });
 
-        console.log('Response status:', response.status);
-        console.log('Response headers:', response.headers.get('content-type'));
 
         const contentType = response.headers.get('content-type');
         if (!response.ok) {
@@ -142,7 +140,6 @@ const ProductSection = () => {
         </div>
         <div className="product-list">
           {products.map((product) => {
-            console.log('Product ID for link:', product._id); // Log để debug
             return (
               <Link
                 key={product._id}

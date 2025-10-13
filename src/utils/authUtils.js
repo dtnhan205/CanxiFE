@@ -9,7 +9,6 @@ export const useAuth = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    console.log('Token:', token); // Debug
     if (!token) {
       navigate('/admin/login', { state: { from: location.pathname } });
       return;
@@ -17,9 +16,7 @@ export const useAuth = () => {
 
     try {
       const decodedToken = jwtDecode(token);
-      console.log('Decoded Token:', decodedToken); // Debug
       const userRole = decodedToken.role || decodedToken.roles || decodedToken.userRole; // Thử nhiều key
-      console.log('User Role:', userRole); // Debug
 
       if (!userRole || userRole.toLowerCase() !== 'admin') {
         navigate('/admin/login', { state: { from: location.pathname } });

@@ -247,7 +247,7 @@ const ContactContent = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/api/contacts', {
+      const response = await fetch('http://160.187.246.95:3000/api/contacts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

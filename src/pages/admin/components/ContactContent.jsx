@@ -26,7 +26,7 @@ const ContactContent = () => {
         }
 
         setStatus({ loading: true, success: false, error: null });
-        const response = await fetch('http://localhost:3000/api/contacts', {
+        const response = await fetch('http://160.187.246.95:3000/api/contacts', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -90,7 +90,7 @@ const ContactContent = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3000/api/contacts/${selectedContactId}`, {
+      const response = await fetch(`http://160.187.246.95:3000/api/contacts/${selectedContactId}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -132,7 +132,7 @@ const ContactContent = () => {
         return;
       }
 
-      const response = await fetch(`http://localhost:3000/api/contacts/${id}`, {
+      const response = await fetch(`http://160.187.246.95:3000/api/contacts/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,

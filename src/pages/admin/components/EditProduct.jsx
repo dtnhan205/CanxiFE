@@ -26,7 +26,7 @@ const EditProduct = () => {
     const fetchProduct = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://localhost:3000/api/products/${id}`, {
+        const response = await fetch(`http://160.187.246.95:3000/api/products/${id}`, {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -162,9 +162,8 @@ const EditProduct = () => {
       }
     });
 
-    console.log('Dữ liệu gửi đi:', Object.fromEntries(data));
     try {
-      const response = await fetch(`http://localhost:3000/api/products/${id}`, {
+      const response = await fetch(`http://160.187.246.95:3000/api/products/${id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -173,7 +172,6 @@ const EditProduct = () => {
       });
 
       const responseData = await response.json();
-      console.log('Phản hồi từ server:', responseData);
       if (!response.ok) throw new Error(responseData.error || 'Failed to update product');
 
       alert('Sản phẩm đã được cập nhật thành công!');

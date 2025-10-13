@@ -44,13 +44,13 @@ const DashboardContent = () => {
 
       // Fetch all data
       const [productsRes, ordersRes, contactsRes] = await Promise.all([
-        fetch('http://localhost:3000/api/products', {
+        fetch('http://160.187.246.95:3000/api/products', {
           headers: { 'Authorization': `Bearer ${token}` }
         }),
-        fetch('http://localhost:3000/api/orders', {
+        fetch('http://160.187.246.95:3000/api/orders', {
           headers: { 'Authorization': `Bearer ${token}` }
         }),
-        fetch('http://localhost:3000/api/contacts', {
+        fetch('http://160.187.246.95:3000/api/contacts', {
           headers: { 'Authorization': `Bearer ${token}` }
         })
       ]);
@@ -294,7 +294,7 @@ const DashboardContent = () => {
         return;
       }
 
-      const response = await fetch(`http://localhost:3000/api/orders/${orderId}/status`, {
+      const response = await fetch(`http://160.187.246.95:3000/api/orders/${orderId}/status`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,

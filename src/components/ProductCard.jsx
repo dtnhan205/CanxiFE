@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // Thêm react-router-dom
 
 const ProductCard = ({ badge, image, title, specification, price, originalPrice, _id }) => {
-  console.log('ProductCard props:', { badge, image, title, specification, price, originalPrice, _id }); // Log để debug
 
   return (
     <div className="product-card">
