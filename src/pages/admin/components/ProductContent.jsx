@@ -90,7 +90,7 @@ const ProductContent = () => {
         ...(status && { status })
       });
 
-      const apiUrl = `http://160.187.246.95:3000/api/products/?${params.toString()}`;
+      const apiUrl = `https://canxiapi.site/api/products/?${params.toString()}`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
@@ -150,7 +150,7 @@ const ProductContent = () => {
             return;
           }
 
-          const response = await fetch(`http://160.187.246.95:3000/api/products/${product?._id}`, {
+          const response = await fetch(`https://canxiapi.site/api/products/${product?._id}`, {
             method: 'DELETE',
             headers: {
               'Authorization': `Bearer ${token}`,

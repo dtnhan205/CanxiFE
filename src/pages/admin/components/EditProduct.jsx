@@ -26,7 +26,7 @@ const EditProduct = () => {
     const fetchProduct = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://160.187.246.95:3000/api/products/${id}`, {
+        const response = await fetch(`https://canxiapi.site/api/products/${id}`, {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -163,7 +163,7 @@ const EditProduct = () => {
     });
 
     try {
-      const response = await fetch(`http://160.187.246.95:3000/api/products/${id}`, {
+      const response = await fetch(`https://canxiapi.site/api/products/${id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,

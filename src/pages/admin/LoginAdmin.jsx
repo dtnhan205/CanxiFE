@@ -29,7 +29,7 @@ const LoginAdmin = () => {
     }
 
     try {
-      const response = await fetch('http://160.187.246.95:3000/api/admins/login', {
+      const response = await fetch('https://canxiapi.site/api/admins/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

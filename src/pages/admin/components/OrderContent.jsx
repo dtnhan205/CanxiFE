@@ -24,7 +24,7 @@ const OrderContent = () => {
         }
 
         setStatus({ loading: true, success: false, error: null });
-        const response = await fetch('http://160.187.246.95:3000/api/orders', {
+        const response = await fetch('https://canxiapi.site/api/orders', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -62,7 +62,7 @@ const OrderContent = () => {
     if (action === 'updateStatus') {
       try {
         setStatus({ loading: true, success: false, error: null });
-        const response = await fetch(`http://160.187.246.95:3000/api/orders/${orderId}/status`, {
+        const response = await fetch(`https://canxiapi.site/api/orders/${orderId}/status`, {
           method: 'PUT',
           headers: {
             'Authorization': `Bearer ${token}`,

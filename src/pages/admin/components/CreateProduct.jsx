@@ -110,7 +110,7 @@ const CreateProduct = () => {
     });
 
     try {
-      const response = await fetch('http://160.187.246.95:3000/api/products', {
+      const response = await fetch('https://canxiapi.site/api/products', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
