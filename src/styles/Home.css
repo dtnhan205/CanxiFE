@@ -115,7 +115,7 @@
 /* Extra Small Devices (360px and below) */
 @media (max-width: 360px) {
     .hero {
-        height: 350px;
+        height: 180px;
         padding: 1.5rem 0.75rem;
     }
     
