@@ -335,9 +335,7 @@ nav {
 
 /* Small Mobile (≤ 400px) */
 @media (max-width: 400px) {
-    .contact-info{
-        font-size: 12px;
-    }
+    
     .header-content {
         padding: 0 0.75rem;
     }
@@ -368,3 +366,8 @@ body.menu-open {
     overflow: hidden;
 }
 
+@media (max-width: 360px) {
+.contact-info{
+        font-size: 12px;
+    }
+}

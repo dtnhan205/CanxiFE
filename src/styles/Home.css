@@ -311,14 +311,18 @@
 }
 
 .product-card {
-    background: white;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    position: relative;
-    max-width: 32rem;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  max-width: 32rem;
+  margin: 0 auto;
+  height: 100%;
 }
 .product-card a{
     text-decoration: none;
@@ -407,19 +411,23 @@
 }
 
 .product-info {
-    padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
 }
 
 .product-title {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
-    height: 3rem;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     line-clamp: 2;
     -webkit-box-orient: vertical;
+    height: 50px;
 }
 
 .product-rating {
@@ -439,11 +447,13 @@
 }
 
 .current-price {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     font-weight: 700;
     color: var(--primary);
 }
-
+.product-specification{
+    font-size: 0.9rem;
+}
 .original-price {
     font-size: 1rem;
     color: var(--gray);
@@ -451,19 +461,20 @@
 }
 
 .add-to-cart {
-    width: 100%;
-    padding: 0.85rem;
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+  margin-top: auto;
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .add-to-cart:hover {
